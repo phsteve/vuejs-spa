@@ -7,9 +7,9 @@
                alt="Vue SPA" />
         </router-link>
       </div>
-      <router-link class="navbar-item is-tab" to="/category/front-end" exact>Home</router-link>
-      <router-link class="navbar-item is-tab" to="/category/mobile" exact>Mobile</router-link>
-      <router-link class="navbar-item is-tab" to="/login" exact>Login</router-link>
+      <router-link class="navbar-item is-tab" to="/category/front-end">Home</router-link>
+      <router-link class="navbar-item is-tab" :to="{ name: 'category', params: { id: 'mobile' } }">Mobile</router-link>
+      <router-link class="navbar-item is-tab" to="/login">Login</router-link>
       </div>
     </div>
   </nav>
