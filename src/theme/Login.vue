@@ -2,6 +2,9 @@
   <div class="content">
     <div v-if="isAuthenticated">
       Hello authenticated user!!!!
+      <button v-on:click="logout()" class="button is-primary">
+        Logout
+      </button>
     </div>
     <div v-else>
       <h2>Login</h2>
@@ -65,9 +68,16 @@
             window.localStorage.setItem('token', data.token)
             window.localStorage.setItem('tokenExpiration', data.expiration)
             this.isAuthenticated = true
+            this.username = ''
+            this.password = ''
           })
           .catch(() => window.alert('Could not login!')
           )
+      },
+      logout () {
+        window.localStorage.setItem('token', null)
+        window.localStorage.setItem('tokenExpiration', null)
+        this.isAuthenticated = false
       }
     },
     created () {
