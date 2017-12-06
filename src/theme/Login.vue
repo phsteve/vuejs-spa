@@ -64,6 +64,7 @@
           .then((data) => {
             window.localStorage.setItem('token', data.token)
             window.localStorage.setItem('tokenExpiration', data.expiration)
+            this.isAuthenticated = true
           })
           .catch(() => window.alert('Could not login!')
           )
